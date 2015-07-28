@@ -14,12 +14,17 @@
   "dependencies": {
     "fis": "^1.9.29",
     "fis-lint-jshint": "0.0.10",
+    "fis-optimizer-ng-annotate": "0.0.2",
     "fis-optimizer-shutup": "0.0.1",
+    "fis-parser-coffee-script": "0.0.2",
     "fis-parser-less": "^0.1.3",
+    "fis-parser-utc": "0.0.2",
     "fis-postpackager-autoload": "0.0.20",
+    "fis-postpackager-modjs": "*",
     "fis-postpackager-simple": "0.0.26",
     "fis-postprocessor-annotate": "^1.2.6",
     "fis-postprocessor-require-async": "0.0.9",
+    "fis-preprocessor-annotate": "0.0.2",
     "fis-prepackager-csswrapper": "0.0.1"
   }
 }

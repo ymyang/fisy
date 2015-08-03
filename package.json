@@ -3,6 +3,11 @@
   "version": "1.0.0",
   "description": "fis",
   "main": "fisy.js",
+  "bin": {
+    "fisy": "bin/fisy",
+    "fis-yang": "bin/fisy",
+    "fis-ymyang": "bin/fisy"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

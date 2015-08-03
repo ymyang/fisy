@@ -128,6 +128,11 @@ fis.config.merge({
                 useMap: false,
                 useCache: false ,
                 release: '/app/$1.html'
+            },
+            {
+                // README
+                reg: /README\.md/,
+                release: false
             }
 
         ],

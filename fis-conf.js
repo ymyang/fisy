@@ -48,12 +48,21 @@ fis.config.merge({
             }
         },
 
-        lint: {
-            jshint: {
-                //排除对lib和jquery、backbone、underscore的检查
-                ignored: ['app/components/**', 'app/libs/**']
-            }
-        },
+        //lint: {
+        //    jshint: {
+        //        //排除对lib和jquery、backbone、underscore的检查
+        //        ignored: ['app/components/**', 'app/libs/**']
+        //    }
+        //},
+
+        //optimizer: {
+        //    'uglify-js': {
+        //        mangle: {
+        //            //不要压缩require关键字，否则seajs会识别不了require
+        //            except: ['require']
+        //        }
+        //    }
+        //},
 
         postpackager: {
             modjs: {

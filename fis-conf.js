@@ -1,45 +1,112 @@
 fis.config.merge({
     urlPrefix: '',
 
-    project: { charset: 'utf8'},
+    project: {
+        include: 'app/**'
+    },
+
+    // fisæ’ä»¶é…ç½®
+    modules: {
+        // é…ç½®ç¼–è¯‘å™¨æ’ä»¶ï¼Œå°†éæ ‡å‡†è¯­è¨€ç¼–è¯‘æˆæ ‡å‡†çš„htmlã€jsã€cssè¯­è¨€
+        parser: {
+            //.lessåç¼€çš„æ–‡ä»¶ä½¿ç”¨fis-parser-lessæ’ä»¶ç¼–è¯‘
+            less: 'less'
+        },
+
+        // åœ¨fiså¯¹jsã€csså’Œç±»htmlæ–‡ä»¶è¿›è¡Œè¯­è¨€èƒ½åŠ›æ‰©å±•ä¹‹åè°ƒç”¨çš„æ’ä»¶é…ç½®ï¼Œ
+        // å¯ä»¥æ ¹æ® æ–‡ä»¶åç¼€ å¯¹æ–‡ä»¶è¿›è¡Œåå¤„ç†ã€‚
+        // è¯¥é˜¶æ®µçš„æ’ä»¶å¯ä»¥è·å–æ–‡ä»¶å¯¹è±¡çš„å®Œæ•´requiresä¿¡æ¯
+        postprocessor: {
+            js: ['jswrapper', 'require-async']
+        },
+
+        // å•æ–‡ä»¶ç¼–è¯‘è¿‡ç¨‹ä¸­çš„ä»£ç æ£€æŸ¥æ’ä»¶
+        lint: {
+            js: 'jshint'
+        },
+
+        // å•æ–‡ä»¶ç¼–è¯‘è¿‡ç¨‹ä¸­çš„æœ€åé˜¶æ®µï¼Œå¯¹æ–‡ä»¶è¿›è¡Œä¼˜åŒ–
+        optimizer: {
+            js: ['ng-annotate', 'uglify-js'],
+            css: 'clean-css',
+            png: 'png-compressor'
+        },
+
+        // æ‰“åŒ…å¤„ç†æ’ä»¶
+        postpackager: ['modjs'],
+
+        // æ‰“åŒ…åå¤„ç†cssspriteçš„æ’ä»¶
+        spriter: 'csssprites'
+    },
+
+    settings: {
+
+        postprocessor: {
+            jswrapper: {
+                //ç”¨fisçš„jsåŒ…è£…å™¨ï¼Œæ›´æ–¹ä¾¿ä¹¦å†™
+                type: 'amd'
+            }
+        },
+
+        lint: {
+            jshint: {
+                //æ’é™¤å¯¹libå’Œjqueryã€backboneã€underscoreçš„æ£€æŸ¥
+                ignored: ['app/components/**', 'app/libs/**']
+            }
+        },
+
+        postpackager: {
+            modjs: {
+                subpath: 'pack/map.js'
+            }
+        },
+
+        spriter: {
+            csssprites: {
+                // å›¾ä¹‹é—´çš„è¾¹è·
+                margin: 10,
+                // ä½¿ç”¨çŸ©é˜µæ’åˆ—æ–¹å¼ï¼Œé»˜è®¤ä¸ºçº¿æ€§`linear`
+                layout: 'matrix'
+            }
+        }
+    },
 
     roadmap: {
         path: [
             {
-                reg: /^\/app\/components\/(.*)\/([\w\-_\.]*)\.(js)$/i,
-                isMod: true,
-                useSprite: false,
-                useOptimizer: false,
-                id: '$2'
-            },
-            {
-                reg: /^\/app\/js\/(.*)\.(js|coffee)$/i,
-                //ÊÇ×é¼ş»¯µÄ£¬»á±»jswrapper°ü×°
-                isMod: true,
-                useSprite: false,
-                isAngular: true,
-                //idÊÇÈ¥µôsea-modulesºÍ.jsºó×ºÖĞ¼äµÄ²¿·Ö
-                id: '$1',
-                //url: '/yliyun/sea-modules/app/$1.$2',
-                //release: '/app/js/$1.$2'
-            },
-            {
-                //.mixin.lessºó×ºµÄÎÄ¼ş
-                reg: /\.mixin\.less$/,
-                //½öµ±×öº¯Êıµ÷ÓÃ£¬²»·¢²¼
-                release: false
-            },
-            {
-                //ÆäËûjs¡¢css¡¢coffee¡¢lessÎÄ¼ş
-                reg: /\.(js|coffee|css|less)$/,
-                //lessºÍcssÎÄ¼ş»á×öcsssprite´¦Àí
-                useSprite: true,
-                //²»Òª·Åµ½js×ÊÔ´±íÀï
+                // modjs
+                reg: /^\/app\/libs\/(.*)\.js$/i,
+                //æ˜¯ç»„ä»¶åŒ–çš„ï¼Œä¼šè¢«jswrapperåŒ…è£…
+                isMod: false,
+                useLint: false,
                 useMap: false
             },
             {
-                //sea-modulesÄ¿Â¼ÏÂµÄÆäËûÎÄ¼ş
-                reg: /^\/app\/js\/(.*)\.tpl$/i,
+                // ç¬¬ä¸‰æ–¹åº“
+                reg: /^\/app\/components\/(.*)\/([\w\-_\.]*)\.(js)$/i,
+                isMod: true,
+                useLint: false,
+                id: '$2'
+            },
+            {
+                // jsæ–‡ä»¶
+                reg: /^\/app\/js\/(.*)\.js$/i,
+                //æ˜¯ç»„ä»¶åŒ–çš„ï¼Œä¼šè¢«jswrapperåŒ…è£…
+                isMod: true,
+                isAngular: true,
+                id: '$1',
+            },
+            {
+                // cssæ–‡ä»¶
+                reg: /^\/app\/css\/(.*)\.css$/,
+                //cssæ–‡ä»¶ä¼šåšcssspriteå¤„ç†
+                useSprite: true,
+                //ä¸è¦æ”¾åˆ°jsèµ„æºè¡¨é‡Œ
+                useMap: false
+            },
+            {
+                // htmlæ¨¡æ¿æ–‡ä»¶
+                reg: /^\/app\/js\/(.*)\.html$/,
                 isMod: false,
                 useSprite: false,
                 isHbsFile: true,
@@ -47,82 +114,25 @@ fis.config.merge({
                 release: false
             },
             {
-                reg: /^\/app\/pages\/(.*)\.html/i,
+                // htmlæ–‡ä»¶
+                reg: /^\/app\/pages\/(.*)\.html/,
                 useMap: false,
-                useCache: false
-                //release: '/app/$1.html'
-            },
-            {
-                //Ç°¶ËÄ£°å
-                reg: '**.tmpl',
-                //µ±×öÀàjsÎÄ¼ş´¦Àí£¬¿ÉÒÔÊ¶±ğ__inline, __uriµÈ×ÊÔ´¶¨Î»±êÊ¶
-                isJsLike: true,
-                //Ö»ÊÇÄÚÇ¶£¬²»ÓÃ·¢²¼
-                release: false
+                useCache: false ,
+                release: '/app/$1.html'
             }
+
         ],
         ext: {
-            //lessÊä³öÎªcssÎÄ¼ş
-            less: 'css',
-            //coffeeÊä³öÎªjsÎÄ¼ş
-            coffee: 'js',
-            // tpl ±àÒëÎªjsÄ£°æº¯Êı
-            tpl: 'js'
+            //lessè¾“å‡ºä¸ºcssæ–‡ä»¶
+            less: 'css'
         }
     },
 
-    modules: {//fis²å¼şÅäÖÃ
-        parser: {
-            //.tmplºó×ºµÄÎÄ¼şÊ¹ÓÃfis-parser-utc²å¼ş±àÒë
-            tmpl: 'utc',
-            //.coffeeºó×ºµÄÎÄ¼şÊ¹ÓÃfis-parser-coffee-script²å¼ş±àÒë
-            coffee: 'coffee-script',
-            //.lessºó×ºµÄÎÄ¼şÊ¹ÓÃfis-parser-less²å¼ş±àÒë
-            less: 'less'
-        },
-
-        postprocessor: {
-            js: ['jswrapper', 'require-async']
-        },
-
-        lint: {
-            js: 'jshint'
-        },
-
-        postpackager: ['modjs', 'autoload', 'simple'],
-
-        optimizer: {
-            js: ['ng-annotate', 'uglify-js'],
-            css: 'clean-css',
-            png: 'png-compressor'
-        }
-    },
-
-    settings: {
-        parser: {
-            'coffee-script': {
-                //²»ÓÃcoffee-script°ü×°×÷ÓÃÓò
-                bare: true
-            }
-        },
-        //lint: {
-        //    jshint: {
-        //        //ÅÅ³ı¶ÔlibºÍjquery¡¢backbone¡¢underscoreµÄ¼ì²é
-        //        ignored: ['app/components/**', /jquery|backbone|underscore|\$|bootstrap/i],
-        //        //Ê¹ÓÃÖĞÎÄ±¨´í
-        //        i18n: 'zh-CN'
-        //    }
-        //},
-        postprocessor: {
-            jswrapper: {
-                //ÓÃfisµÄjs°ü×°Æ÷£¬¸ü·½±ãÊéĞ´
-                type: 'amd'
-            }
-        },
-        postpackager: {
-            modjs: {
-                subpath: 'pack/map.js'
-            }
-        }
+    pack: {
+        'pack/lib.js': ['app/libs/**.js', 'app/components/**.js'],
+        'pack/common.js': ['app/js/common/**.js'],
+        'pack/login.js': ['app/js/login/**.js'],
+        'pack/home.js': ['app/js/home/**.js']
     }
 });
+

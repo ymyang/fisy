@@ -17,12 +17,12 @@
   "author": "ymyang",
   "license": "ISC",
   "dependencies": {
-    "fis": "^1.9.29",
+    "fis": "^1.9.33",
     "fis-lint-jshint": "0.0.10",
     "fis-optimizer-ng-annotate": "0.0.2",
     "fis-optimizer-shutup": "0.0.1",
     "fis-parser-less": "^0.1.3",
-    "fis-postpackager-modjs": "*",
+    "fis-postpackager-modjs": "0.0.2",
     "fis-postprocessor-require-async": "0.0.9"
   }
 }

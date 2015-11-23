@@ -1,6 +1,6 @@
 # fisy
 
-»ùÓÚfisµÄÇ°¶Ë×Ô¶¯»¯½â¾ö·½°¸
+åŸºäºfisçš„å‰ç«¯è‡ªåŠ¨åŒ–è§£å†³æ–¹æ¡ˆ
 
 bin: fisy | fis-yang | fis-ymyang
 
@@ -12,109 +12,109 @@ demo: [angular-quickstart](https://github.com/ymyang/angular-fisy-demo)
 
 [![NPM Download](https://nodei.co/npm-dl/fis.png?months=1)](https://www.npmjs.org/package/fis)
 
-## Front-end Integrated Solution£¨Ç°¶Ë¼¯³É½â¾ö·½°¸£©
+## Front-end Integrated Solutionï¼ˆå‰ç«¯é›†æˆè§£å†³æ–¹æ¡ˆï¼‰
 
 [![Join the chat at https://gitter.im/fex-team/fis](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/fex-team/fis?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-> ½â¾öÇ°¶Ë¹¤³ÌµÄ¸ù±¾ÎÊÌâ£¡
+> è§£å†³å‰ç«¯å·¥ç¨‹çš„æ ¹æœ¬é—®é¢˜ï¼
 
-## F.I.S¼ò½é
+## F.I.Sç®€ä»‹
 
-* [Ê²Ã´ÊÇF.I.S](https://github.com/fis-dev/fis/wiki/Ê²Ã´ÊÇF.I.S)
+* [ä»€ä¹ˆæ˜¯F.I.S](https://github.com/fis-dev/fis/wiki/ä»€ä¹ˆæ˜¯F.I.S)
 
-»¶Ó­·ÃÎÊ[FIS¹ÙÍø](http://fis.baidu.com)»ñÈ¡×îĞÂµÄÎÄµµ
+æ¬¢è¿è®¿é—®[FISå®˜ç½‘](http://fis.baidu.com)è·å–æœ€æ–°çš„æ–‡æ¡£
 
-Í¬Ê±ÎÒÃÇÔÚÄ½¿ÎÍø¿ªÍ¨ÁË[ÔÚÏß¿Î³Ì](http://www.imooc.com/learn/220)£¬»¶Ó­´ó¼Ò·ÃÎÊ
+åŒæ—¶æˆ‘ä»¬åœ¨æ…•è¯¾ç½‘å¼€é€šäº†[åœ¨çº¿è¯¾ç¨‹](http://www.imooc.com/learn/220)ï¼Œæ¬¢è¿å¤§å®¶è®¿é—®
 
-## ¹¦ÄÜ¸ÅÊö
+## åŠŸèƒ½æ¦‚è¿°
 
-* ¿çÆ½Ì¨Ö§³Öwin¡¢mac¡¢linuxµÈÏµÍ³
-* ÎŞÄÚÖÃ¹æ·¶£¬¿ÉÅäÖÃ [¿ª·¢ºÍ²¿Êğ¹æ·¶](https://github.com/fis-dev/fis/wiki/ÅäÖÃAPI#wiki-roadmappath)£¬ÓÃÓÚÂú×ãÈÎºÎÇ°ºó¶Ë¿ò¼ÜµÄ²¿ÊğĞèÇó
-* ¶Ôhtml¡¢js¡¢cssÊµÏÖ [ÈıÖÖÓïÑÔÄÜÁ¦](https://github.com/fis-dev/fis/wiki/ÈıÖÖÓïÑÔÄÜÁ¦) À©Õ¹£¬½â¾ö¾ø´ó¶àÊıÇ°¶Ë¹¹½¨ÎÊÌâ
-* Ö§³Ö¶ş´Î°ü×°£¬±ÈÈç [spmx](https://github.com/fouber/spmx)¡¢ [phiz](https://github.com/fouber/phiz/)¡¢ [chassis](https://github.com/xspider/fis-chassis)£¬¶Ôfis½øĞĞ°ü×°ºó¿ÉÄÚÖÃĞÂµÄ²å¼ş¡¢ÅäÖÃ£¬´Ó¶ø´òÔìÊôÓÚÄãÃÇÍÅ¶ÓµÄ×Ô¼ºµÄ¿ª·¢¹¤¾ß
-* ×Ô¶¯Éú³É¾²Ì¬×ÊÔ´±í¹ØÏµ±í£¨map.json£©£¬¿ÉÓÃÓÚ [Á¬½ÓÇ°ºó¶Ë¿ª·¢¿ò¼Ü](https://github.com/fis-dev/fis/wiki/»ùÓÚmap.jsonµÄÇ°ºó¶Ë¼Ü¹¹Éè¼ÆÖ¸µ¼)
-* ËùÓĞ¾²Ì¬×ÊÔ´×Ô¶¯¼Ó ``md5°æ±¾´Á``£¬·şÎñ¶Ë¿É·ÅĞÄ¿ªÆôÓÀ¾ÃÇ¿»º´æ
-* Ö§³Ö¸øËùÓĞ¾²Ì¬×ÊÔ´Ìí¼ÓÓòÃûÇ°×º
-* ¿ÉÁé»îÀ©Õ¹µÄ²å¼şÏµÍ³£¬Ö§³Ö¶Ô¹¹½¨¹ı³ÌºÍÃüÁî¹¦ÄÜ½øĞĞÀ©Õ¹£¬ÏÖÒÑ·¢²¼N¶à [²å¼ş](https://npmjs.org/search?q=fis)
-* Í¨¹ı²å¼şÅäÖÃ¿ÉÒÔÔÚÒ»¸öÏîÄ¿ÖĞÎŞ·ìÊ¹ÓÃ [less](https://github.com/fouber/fis-parser-less)¡¢[coffee](https://github.com/fouber/fis-parser-coffee-script)¡¢[markdown](https://github.com/fouber/fis-parser-marked)¡¢[jade](https://npmjs.org/package/fis-parser-jade)µÈÓïÑÔ¿ª·¢
-* ÄÚÖÃ [css sprites²å¼ş](https://github.com/fex-team/fis-spriter-csssprites)£¬¼òµ¥Ò×ÓÃ
-* ÄÚÖÃ [pngÍ¼Æ¬Ñ¹Ëõ²å¼ş](https://github.com/fis-dev/fis-optimizer-png-compressor)£¬²ÉÓÃc++±àĞ´µÄnodeÀ©Õ¹£¬¾ßÓĞ¼«¸ßµÄĞÔÄÜ£¬Ö§³Ö [½«png24Ñ¹ËõÎªpng8](https://github.com/fis-dev/fis-optimizer-png-compressor)
-* ÄÚÖÃ±¾µØ¿ª·¢µ÷ÊÔ·şÎñÆ÷£¬Ö§³ÖÍêÃÀÔËĞĞ ``java``¡¢``jsp``¡¢``php`` µÈ·şÎñ¶ËÓïÑÔ
-* Ö§³ÖÎÄ¼ş¼àÌı£¬±£´æ¼´·¢²¼
-* Ö§³Öä¯ÀÀÆ÷×Ô¶¯Ë¢ĞÂ£¬¿ÉÍ¬Ê±Ë¢ĞÂ¶à¸öÖÕ¶ËÖĞµÄÒ³Ãæ£¬ÅäºÏÎÄ¼ş¼àÌı¹¦ÄÜ¿ÉÊµÏÖ±£´æ¼´Ë¢ĞÂ
-* Ö§³ÖÉÏ´«µ½Ô¶¶Ë·şÎñÆ÷£¬ÅäºÏÎÄ¼ş¼àÌı£¬ä¯ÀÀÆ÷×Ô¶¯Ë¢ĞÂ¹¦ÄÜ£¬¿ÉÊµÏÖ±£´æ¼´ÔöÁ¿±àÒëÉÏ´«£¬ÉÏ´«ºó¼´Ë¢ĞÂµÄ¿ª·¢ÌåÑé
-* ³¬µÍÑ§Ï°³É±¾£¬Ö»Ğë¼ÇÒä ``3`` ÌõÃüÁî¼´¿ÉÍê³É¿ª·¢
-* Ä¨Æ½±àÂë²îÒì£¬¿ª·¢ÖĞÎŞÂÛÊÇgbk¡¢gb2312¡¢utf8¡¢utf8-bomµÈ±àÂëµÄÎÄ¼ş£¬Êä³öÊ±¶¼ÄÜÍ³Ò»Ö¸¶¨Îªutf8ÎŞbom£¨Ä¬ÈÏ£©»òÕßgbkÎÄ¼ş
+* è·¨å¹³å°æ”¯æŒwinã€macã€linuxç­‰ç³»ç»Ÿ
+* æ— å†…ç½®è§„èŒƒï¼Œå¯é…ç½® [å¼€å‘å’Œéƒ¨ç½²è§„èŒƒ](https://github.com/fis-dev/fis/wiki/é…ç½®API#wiki-roadmappath)ï¼Œç”¨äºæ»¡è¶³ä»»ä½•å‰åç«¯æ¡†æ¶çš„éƒ¨ç½²éœ€æ±‚
+* å¯¹htmlã€jsã€csså®ç° [ä¸‰ç§è¯­è¨€èƒ½åŠ›](https://github.com/fis-dev/fis/wiki/ä¸‰ç§è¯­è¨€èƒ½åŠ›) æ‰©å±•ï¼Œè§£å†³ç»å¤§å¤šæ•°å‰ç«¯æ„å»ºé—®é¢˜
+* æ”¯æŒäºŒæ¬¡åŒ…è£…ï¼Œæ¯”å¦‚ [spmx](https://github.com/fouber/spmx)ã€ [phiz](https://github.com/fouber/phiz/)ã€ [chassis](https://github.com/xspider/fis-chassis)ï¼Œå¯¹fisè¿›è¡ŒåŒ…è£…åå¯å†…ç½®æ–°çš„æ’ä»¶ã€é…ç½®ï¼Œä»è€Œæ‰“é€ å±äºä½ ä»¬å›¢é˜Ÿçš„è‡ªå·±çš„å¼€å‘å·¥å…·
+* è‡ªåŠ¨ç”Ÿæˆé™æ€èµ„æºè¡¨å…³ç³»è¡¨ï¼ˆmap.jsonï¼‰ï¼Œå¯ç”¨äº [è¿æ¥å‰åç«¯å¼€å‘æ¡†æ¶](https://github.com/fis-dev/fis/wiki/åŸºäºmap.jsonçš„å‰åç«¯æ¶æ„è®¾è®¡æŒ‡å¯¼)
+* æ‰€æœ‰é™æ€èµ„æºè‡ªåŠ¨åŠ  ``md5ç‰ˆæœ¬æˆ³``ï¼ŒæœåŠ¡ç«¯å¯æ”¾å¿ƒå¼€å¯æ°¸ä¹…å¼ºç¼“å­˜
+* æ”¯æŒç»™æ‰€æœ‰é™æ€èµ„æºæ·»åŠ åŸŸåå‰ç¼€
+* å¯çµæ´»æ‰©å±•çš„æ’ä»¶ç³»ç»Ÿï¼Œæ”¯æŒå¯¹æ„å»ºè¿‡ç¨‹å’Œå‘½ä»¤åŠŸèƒ½è¿›è¡Œæ‰©å±•ï¼Œç°å·²å‘å¸ƒNå¤š [æ’ä»¶](https://npmjs.org/search?q=fis)
+* é€šè¿‡æ’ä»¶é…ç½®å¯ä»¥åœ¨ä¸€ä¸ªé¡¹ç›®ä¸­æ— ç¼ä½¿ç”¨ [less](https://github.com/fouber/fis-parser-less)ã€[coffee](https://github.com/fouber/fis-parser-coffee-script)ã€[markdown](https://github.com/fouber/fis-parser-marked)ã€[jade](https://npmjs.org/package/fis-parser-jade)ç­‰è¯­è¨€å¼€å‘
+* å†…ç½® [css spritesæ’ä»¶](https://github.com/fex-team/fis-spriter-csssprites)ï¼Œç®€å•æ˜“ç”¨
+* å†…ç½® [pngå›¾ç‰‡å‹ç¼©æ’ä»¶](https://github.com/fis-dev/fis-optimizer-png-compressor)ï¼Œé‡‡ç”¨c++ç¼–å†™çš„nodeæ‰©å±•ï¼Œå…·æœ‰æé«˜çš„æ€§èƒ½ï¼Œæ”¯æŒ [å°†png24å‹ç¼©ä¸ºpng8](https://github.com/fis-dev/fis-optimizer-png-compressor)
+* å†…ç½®æœ¬åœ°å¼€å‘è°ƒè¯•æœåŠ¡å™¨ï¼Œæ”¯æŒå®Œç¾è¿è¡Œ ``java``ã€``jsp``ã€``php`` ç­‰æœåŠ¡ç«¯è¯­è¨€
+* æ”¯æŒæ–‡ä»¶ç›‘å¬ï¼Œä¿å­˜å³å‘å¸ƒ
+* æ”¯æŒæµè§ˆå™¨è‡ªåŠ¨åˆ·æ–°ï¼Œå¯åŒæ—¶åˆ·æ–°å¤šä¸ªç»ˆç«¯ä¸­çš„é¡µé¢ï¼Œé…åˆæ–‡ä»¶ç›‘å¬åŠŸèƒ½å¯å®ç°ä¿å­˜å³åˆ·æ–°
+* æ”¯æŒä¸Šä¼ åˆ°è¿œç«¯æœåŠ¡å™¨ï¼Œé…åˆæ–‡ä»¶ç›‘å¬ï¼Œæµè§ˆå™¨è‡ªåŠ¨åˆ·æ–°åŠŸèƒ½ï¼Œå¯å®ç°ä¿å­˜å³å¢é‡ç¼–è¯‘ä¸Šä¼ ï¼Œä¸Šä¼ åå³åˆ·æ–°çš„å¼€å‘ä½“éªŒ
+* è¶…ä½å­¦ä¹ æˆæœ¬ï¼Œåªé¡»è®°å¿† ``3`` æ¡å‘½ä»¤å³å¯å®Œæˆå¼€å‘
+* æŠ¹å¹³ç¼–ç å·®å¼‚ï¼Œå¼€å‘ä¸­æ— è®ºæ˜¯gbkã€gb2312ã€utf8ã€utf8-bomç­‰ç¼–ç çš„æ–‡ä»¶ï¼Œè¾“å‡ºæ—¶éƒ½èƒ½ç»Ÿä¸€æŒ‡å®šä¸ºutf8æ— bomï¼ˆé»˜è®¤ï¼‰æˆ–è€…gbkæ–‡ä»¶
 
-## ¿ìËÙÈëÃÅ
+## å¿«é€Ÿå…¥é—¨
 
-* [»ù±¾Ê¹ÓÃ](https://github.com/fex-team/fis/wiki/¿ìËÙÈëÃÅ)
-* [×ÊÔ´Ñ¹Ëõ](https://github.com/fex-team/fis/wiki/¿ìËÙÈëÃÅ#×ÊÔ´Ñ¹Ëõ)
-* [×ÊÔ´ºÏ²¢](https://github.com/fex-team/fis/wiki/¿ìËÙÈëÃÅ#×ÊÔ´ºÏ²¢)
-* [¸¨Öú¿ª·¢](https://github.com/fex-team/fis/wiki/¸¨Öú¿ª·¢)
+* [åŸºæœ¬ä½¿ç”¨](https://github.com/fex-team/fis/wiki/å¿«é€Ÿå…¥é—¨)
+* [èµ„æºå‹ç¼©](https://github.com/fex-team/fis/wiki/å¿«é€Ÿå…¥é—¨#èµ„æºå‹ç¼©)
+* [èµ„æºåˆå¹¶](https://github.com/fex-team/fis/wiki/å¿«é€Ÿå…¥é—¨#èµ„æºåˆå¹¶)
+* [è¾…åŠ©å¼€å‘](https://github.com/fex-team/fis/wiki/è¾…åŠ©å¼€å‘)
 
-## ÓïÑÔÄÜÁ¦
+## è¯­è¨€èƒ½åŠ›
 
-* [¹ØÓÚÈıÖÖÓïÑÔÄÜÁ¦](https://github.com/fis-dev/fis/wiki/ÈıÖÖÓïÑÔÄÜÁ¦)
-* [¶¨Î»×ÊÔ´](https://github.com/fis-dev/fis/wiki/¶¨Î»×ÊÔ´)
-* [Ç¶Èë×ÊÔ´](https://github.com/fis-dev/fis/wiki/Ç¶Èë×ÊÔ´)
-* [ÉùÃ÷ÒÀÀµ](https://github.com/fis-dev/fis/wiki/ÉùÃ÷ÒÀÀµ)
+* [å…³äºä¸‰ç§è¯­è¨€èƒ½åŠ›](https://github.com/fis-dev/fis/wiki/ä¸‰ç§è¯­è¨€èƒ½åŠ›)
+* [å®šä½èµ„æº](https://github.com/fis-dev/fis/wiki/å®šä½èµ„æº)
+* [åµŒå…¥èµ„æº](https://github.com/fis-dev/fis/wiki/åµŒå…¥èµ„æº)
+* [å£°æ˜ä¾èµ–](https://github.com/fis-dev/fis/wiki/å£°æ˜ä¾èµ–)
 
-## ²å¼şÏµÍ³
+## æ’ä»¶ç³»ç»Ÿ
 
-* [±àÒë¹ı³ÌÔËĞĞÔ­Àí](https://github.com/fis-dev/fis/wiki/ÔËĞĞÔ­Àí)
-* [²å¼şµ÷ÓÃ»úÖÆ](https://github.com/fis-dev/fis/wiki/²å¼şµ÷ÓÃ»úÖÆ)
-* [²å¼şÀ©Õ¹µã](https://github.com/fis-dev/fis/wiki/²å¼şÀ©Õ¹µãÁĞ±í)
-* [²å¼şÁĞ±í](https://github.com/fis-dev/fis/wiki/²å¼şÁĞ±í)
+* [ç¼–è¯‘è¿‡ç¨‹è¿è¡ŒåŸç†](https://github.com/fis-dev/fis/wiki/è¿è¡ŒåŸç†)
+* [æ’ä»¶è°ƒç”¨æœºåˆ¶](https://github.com/fis-dev/fis/wiki/æ’ä»¶è°ƒç”¨æœºåˆ¶)
+* [æ’ä»¶æ‰©å±•ç‚¹](https://github.com/fis-dev/fis/wiki/æ’ä»¶æ‰©å±•ç‚¹åˆ—è¡¨)
+* [æ’ä»¶åˆ—è¡¨](https://github.com/fis-dev/fis/wiki/æ’ä»¶åˆ—è¡¨)
 
-## ÅäÖÃÎÄµµ
+## é…ç½®æ–‡æ¡£
 
-* [ÁãÅäÖÃ](https://github.com/fis-dev/fis/wiki/ÅäÖÃAPI)
-* [Ê¹ÓÃÅäÖÃÎÄ¼ş](https://github.com/fis-dev/fis/wiki/ÅäÖÃAPI)
-* ÏµÍ³ÅäÖÃ
-    * [project.charset](https://github.com/fis-dev/fis/wiki/ÅäÖÃAPI#wiki-projectcharset)
-    * [project.md5Length](https://github.com/fis-dev/fis/wiki/ÅäÖÃAPI#wiki-projectmd5length)
-    * [project.md5Connector](https://github.com/fis-dev/fis/wiki/ÅäÖÃAPI#wiki-projectmd5connector)
-    * [project.include](https://github.com/fis-dev/fis/wiki/ÅäÖÃAPI#wiki-projectinclude)
-    * [project.exclude](https://github.com/fis-dev/fis/wiki/ÅäÖÃAPI#wiki-projectexclude)
-    * [project.fileType.text](https://github.com/fis-dev/fis/wiki/ÅäÖÃAPI#wiki-projectfiletypetext)
-    * [project.fileType.image](https://github.com/fis-dev/fis/wiki/ÅäÖÃAPI#wiki-projectfiletypeimage)
-* ²å¼şÅäÖÃ
-    * [modules.parser](https://github.com/fis-dev/fis/wiki/ÅäÖÃAPI#wiki-modulesparser)
-    * [modules.preprocessor](https://github.com/fis-dev/fis/wiki/ÅäÖÃAPI#wiki-modulespreprocessor)
-    * [modules.postprocessor](https://github.com/fis-dev/fis/wiki/ÅäÖÃAPI#wiki-modulespostprocessor)
-    * [modules.lint](https://github.com/fis-dev/fis/wiki/ÅäÖÃAPI#wiki-moduleslint)
-    * [modules.test](https://github.com/fis-dev/fis/wiki/ÅäÖÃAPI#wiki-modulestest)
-    * [modules.optimizer](https://github.com/fis-dev/fis/wiki/ÅäÖÃAPI#wiki-modulesoptimizer)
-    * [modules.prepackager](https://github.com/fis-dev/fis/wiki/ÅäÖÃAPI#wiki-modulesprepackager)
-    * [modules.packager](https://github.com/fis-dev/fis/wiki/ÅäÖÃAPI#wiki-modulespackager)
-    * [modules.spriter](https://github.com/fis-dev/fis/wiki/ÅäÖÃAPI#wiki-modulesspriter)
-    * [modules.postpackager](https://github.com/fis-dev/fis/wiki/ÅäÖÃAPI#wiki-modulespostpackager)
-    * [settings](https://github.com/fis-dev/fis/wiki/ÅäÖÃAPI#wiki-settings)
-* ÄÚÖÃ²å¼şÔËĞĞÅäÖÃ
+* [é›¶é…ç½®](https://github.com/fis-dev/fis/wiki/é…ç½®API)
+* [ä½¿ç”¨é…ç½®æ–‡ä»¶](https://github.com/fis-dev/fis/wiki/é…ç½®API)
+* ç³»ç»Ÿé…ç½®
+    * [project.charset](https://github.com/fis-dev/fis/wiki/é…ç½®API#wiki-projectcharset)
+    * [project.md5Length](https://github.com/fis-dev/fis/wiki/é…ç½®API#wiki-projectmd5length)
+    * [project.md5Connector](https://github.com/fis-dev/fis/wiki/é…ç½®API#wiki-projectmd5connector)
+    * [project.include](https://github.com/fis-dev/fis/wiki/é…ç½®API#wiki-projectinclude)
+    * [project.exclude](https://github.com/fis-dev/fis/wiki/é…ç½®API#wiki-projectexclude)
+    * [project.fileType.text](https://github.com/fis-dev/fis/wiki/é…ç½®API#wiki-projectfiletypetext)
+    * [project.fileType.image](https://github.com/fis-dev/fis/wiki/é…ç½®API#wiki-projectfiletypeimage)
+* æ’ä»¶é…ç½®
+    * [modules.parser](https://github.com/fis-dev/fis/wiki/é…ç½®API#wiki-modulesparser)
+    * [modules.preprocessor](https://github.com/fis-dev/fis/wiki/é…ç½®API#wiki-modulespreprocessor)
+    * [modules.postprocessor](https://github.com/fis-dev/fis/wiki/é…ç½®API#wiki-modulespostprocessor)
+    * [modules.lint](https://github.com/fis-dev/fis/wiki/é…ç½®API#wiki-moduleslint)
+    * [modules.test](https://github.com/fis-dev/fis/wiki/é…ç½®API#wiki-modulestest)
+    * [modules.optimizer](https://github.com/fis-dev/fis/wiki/é…ç½®API#wiki-modulesoptimizer)
+    * [modules.prepackager](https://github.com/fis-dev/fis/wiki/é…ç½®API#wiki-modulesprepackager)
+    * [modules.packager](https://github.com/fis-dev/fis/wiki/é…ç½®API#wiki-modulespackager)
+    * [modules.spriter](https://github.com/fis-dev/fis/wiki/é…ç½®API#wiki-modulesspriter)
+    * [modules.postpackager](https://github.com/fis-dev/fis/wiki/é…ç½®API#wiki-modulespostpackager)
+    * [settings](https://github.com/fis-dev/fis/wiki/é…ç½®API#wiki-settings)
+* å†…ç½®æ’ä»¶è¿è¡Œé…ç½®
     * [settings.postprocessor.jswrapper](https://github.com/fis-dev/fis/wiki/%E9%85%8D%E7%BD%AEAPI#settingspostprocessorjswrapper)
     * [settings.optimizer.uglify-js](https://github.com/fis-dev/fis/wiki/%E9%85%8D%E7%BD%AEAPI#settingsoptimizeruglify-js)
     * [settings.optimizer.clean-css](https://github.com/fis-dev/fis/wiki/%E9%85%8D%E7%BD%AEAPI#settingsoptimizerclean-css)
     * [settings.optimizer.png-compressor](https://github.com/fis-dev/fis/wiki/%E9%85%8D%E7%BD%AEAPI#settingsoptimizerpng-compressor)
     * [settings.spriter.csssprites](https://github.com/fis-dev/fis/wiki/%E9%85%8D%E7%BD%AEAPI#settingsspritercsssprites)
-* Ä¿Â¼¹æ·¶ÓëÓòÃûÅäÖÃ
-    * [roadmap.path](https://github.com/fis-dev/fis/wiki/ÅäÖÃAPI#wiki-roadmappath)
-    * [roadmap.ext](https://github.com/fis-dev/fis/wiki/ÅäÖÃAPI#wiki-roadmapext)
-    * [roadmap.domain](https://github.com/fis-dev/fis/wiki/ÅäÖÃAPI#wiki-roadmapdomain)
-    * [roadmap.domain.image](https://github.com/fis-dev/fis/wiki/ÅäÖÃAPI#wiki-roadmapdomainimage)
-* ²¿ÊğÅäÖÃ
-    * [deploy](https://github.com/fis-dev/fis/wiki/ÅäÖÃAPI#wiki-deploy)
-* ´ò°üÅäÖÃ
-    * [pack](https://github.com/fis-dev/fis/wiki/ÅäÖÃAPI#wiki-pack)
+* ç›®å½•è§„èŒƒä¸åŸŸåé…ç½®
+    * [roadmap.path](https://github.com/fis-dev/fis/wiki/é…ç½®API#wiki-roadmappath)
+    * [roadmap.ext](https://github.com/fis-dev/fis/wiki/é…ç½®API#wiki-roadmapext)
+    * [roadmap.domain](https://github.com/fis-dev/fis/wiki/é…ç½®API#wiki-roadmapdomain)
+    * [roadmap.domain.image](https://github.com/fis-dev/fis/wiki/é…ç½®API#wiki-roadmapdomainimage)
+* éƒ¨ç½²é…ç½®
+    * [deploy](https://github.com/fis-dev/fis/wiki/é…ç½®API#wiki-deploy)
+* æ‰“åŒ…é…ç½®
+    * [pack](https://github.com/fis-dev/fis/wiki/é…ç½®API#wiki-pack)
 
-## ¸ß¼¶Ê¹ÓÃ
+## é«˜çº§ä½¿ç”¨
 
-* [»ùÓÚmap.jsonµÄÇ°ºó¶Ë¼Ü¹¹Éè¼ÆÖ¸µ¼](https://github.com/fis-dev/fis/wiki/»ùÓÚmap.jsonµÄÇ°ºó¶Ë¼Ü¹¹Éè¼ÆÖ¸µ¼)
+* [åŸºäºmap.jsonçš„å‰åç«¯æ¶æ„è®¾è®¡æŒ‡å¯¼](https://github.com/fis-dev/fis/wiki/åŸºäºmap.jsonçš„å‰åç«¯æ¶æ„è®¾è®¡æŒ‡å¯¼)
 
-## ¸ü¶à×ÊÁÏ
+## æ›´å¤šèµ„æ–™
 
-* [fistool](https://github.com/kaven85/fistool) ¿ÉÊÓ»¯½çÃæ¹¤¾ß
-* [gois](https://github.com/xiangshouding/gois) goÓïÑÔ×é¼ş»¯½â¾ö·½°¸
-* [phiz](https://github.com/fouber/phiz/) PHP×é¼ş»¯½â¾ö·½°¸
-* [spmx](https://github.com/fouber/spmx) Í¨¹ı°ü×°fisµÃµ½ÊÊÓ¦seajs¼Ü¹¹µÄ¼¯³É½â¾ö·½°¸
-* [sublime plugin](https://github.com/yuanfang829/fis-sublime-command) Ö§³ÖFIS±àÒëµÄsublime²å¼ş£¬¿ÉÒÔÌæ´úwatch¹¦ÄÜ
+* [fistool](https://github.com/kaven85/fistool) å¯è§†åŒ–ç•Œé¢å·¥å…·
+* [gois](https://github.com/xiangshouding/gois) goè¯­è¨€ç»„ä»¶åŒ–è§£å†³æ–¹æ¡ˆ
+* [phiz](https://github.com/fouber/phiz/) PHPç»„ä»¶åŒ–è§£å†³æ–¹æ¡ˆ
+* [spmx](https://github.com/fouber/spmx) é€šè¿‡åŒ…è£…fiså¾—åˆ°é€‚åº”seajsæ¶æ„çš„é›†æˆè§£å†³æ–¹æ¡ˆ
+* [sublime plugin](https://github.com/yuanfang829/fis-sublime-command) æ”¯æŒFISç¼–è¯‘çš„sublimeæ’ä»¶ï¼Œå¯ä»¥æ›¿ä»£watchåŠŸèƒ½

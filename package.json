@@ -15,7 +15,7 @@
   "author": "ymyang",
   "license": "ISC",
   "dependencies": {
-    "fis": "^1.9.33",
+    "fis": "^1.9.39",
     "fis-lint-jshint": "0.0.10",
     "fis-optimizer-ng-annotate": "0.0.2",
     "fis-optimizer-shutup": "0.0.1",

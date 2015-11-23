@@ -2,7 +2,7 @@
 
 基于fis的前端自动化解决方案
 
-bin: fisy | fis-yang | fis-ymyang
+bin: fisy
 
 demo: [angular-quickstart](https://github.com/ymyang/angular-fisy-demo)
 

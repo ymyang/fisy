@@ -1,120 +1,223 @@
-# fisy
+![](https://raw.githubusercontent.com/fex-team/fis3/master/doc/logo.png)
 
-基于fis的前端自动化解决方案
+# FIS3
+![](https://img.shields.io/npm/v/fis3.svg) ![](https://img.shields.io/npm/dm/fis3.svg)
+[![Build Status](https://travis-ci.org/fex-team/fis3.svg?branch=master)](https://travis-ci.org/fex-team/fis3)
+[![Coverage Status](https://coveralls.io/repos/fex-team/fis3/badge.svg?branch=master&service=github)](https://coveralls.io/github/fex-team/fis3?branch=master)
 
-bin: fisy
+FIS3 面向**前端**的**工程构建系统**。解决前端工程中性能优化、资源加载（异步、同步、按需、预加载、依赖管理、合并、内嵌）、模块化开发、自动化工具、开发规范、代码部署等问题。
 
-demo: [angular-quickstart](https://github.com/ymyang/angular-fisy-demo)
+> 如果对FIS先有些了解，但理解不深的，可试着带着这句话去看文档 <br>
+> FIS3 会在配置文件中给文件添加相应属性，用于控制文件的编译、合并等各种操作；文件属性包括基本属性和插件属性，[详细请参考](https://github.com/fex-team/fis3/blob/master/doc/docs/api/config-props.md#文件属性)
 
-![fis logo](https://raw.githubusercontent.com/fouber/fis-wiki-img/master/logo.png)
+```
+npm install -g fisy
+```
 
-[![NPM version](https://badge.fury.io/js/fis.png)](http://badge.fury.io/js/fis) [![Dependencies Status](https://david-dm.org/fex-team/fis.png)](https://david-dm.org/fex-team/fis)
+## 文档
 
-[![NPM Download](https://nodei.co/npm-dl/fis.png?months=1)](https://www.npmjs.org/package/fis)
+快速入门、配置、插件开发以及原理等文档 [doc/docs/INDEX.md](doc/docs/INDEX.md)
 
-## Front-end Integrated Solution（前端集成解决方案）
+## 例子
 
-[![Join the chat at https://gitter.im/fex-team/fis](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/fex-team/fis?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+*fis-conf.js 的例子*
 
-> 解决前端工程的根本问题！
+```js
+// default settings. fisy release
 
-## F.I.S简介
+// Global start
+fis.match('*.{js,css}', {
+  useHash: true
+});
 
-* [什么是F.I.S](https://github.com/fis-dev/fis/wiki/什么是F.I.S)
+fis.match('::image', {
+  useHash: true
+});
 
-欢迎访问[FIS官网](http://fis.baidu.com)获取最新的文档
+fis.match('*.js', {
+  optimizer: fis.plugin('uglify-js') // js 压缩
+});
 
-同时我们在慕课网开通了[在线课程](http://www.imooc.com/learn/220)，欢迎大家访问
+fis.match('*.css', {
+  optimizer: fis.plugin('clean-css') // css 压缩
+});
 
-## 功能概述
+fis.match('*.png', {
+  optimizer: fis.plugin('png-compressor') // png 图片压缩
+});
 
-* 跨平台支持win、mac、linux等系统
-* 无内置规范，可配置 [开发和部署规范](https://github.com/fis-dev/fis/wiki/配置API#wiki-roadmappath)，用于满足任何前后端框架的部署需求
-* 对html、js、css实现 [三种语言能力](https://github.com/fis-dev/fis/wiki/三种语言能力) 扩展，解决绝大多数前端构建问题
-* 支持二次包装，比如 [spmx](https://github.com/fouber/spmx)、 [phiz](https://github.com/fouber/phiz/)、 [chassis](https://github.com/xspider/fis-chassis)，对fis进行包装后可内置新的插件、配置，从而打造属于你们团队的自己的开发工具
-* 自动生成静态资源表关系表（map.json），可用于 [连接前后端开发框架](https://github.com/fis-dev/fis/wiki/基于map.json的前后端架构设计指导)
-* 所有静态资源自动加 ``md5版本戳``，服务端可放心开启永久强缓存
-* 支持给所有静态资源添加域名前缀
-* 可灵活扩展的插件系统，支持对构建过程和命令功能进行扩展，现已发布N多 [插件](https://npmjs.org/search?q=fis)
-* 通过插件配置可以在一个项目中无缝使用 [less](https://github.com/fouber/fis-parser-less)、[coffee](https://github.com/fouber/fis-parser-coffee-script)、[markdown](https://github.com/fouber/fis-parser-marked)、[jade](https://npmjs.org/package/fis-parser-jade)等语言开发
-* 内置 [css sprites插件](https://github.com/fex-team/fis-spriter-csssprites)，简单易用
-* 内置 [png图片压缩插件](https://github.com/fis-dev/fis-optimizer-png-compressor)，采用c++编写的node扩展，具有极高的性能，支持 [将png24压缩为png8](https://github.com/fis-dev/fis-optimizer-png-compressor)
-* 内置本地开发调试服务器，支持完美运行 ``java``、``jsp``、``php`` 等服务端语言
-* 支持文件监听，保存即发布
-* 支持浏览器自动刷新，可同时刷新多个终端中的页面，配合文件监听功能可实现保存即刷新
-* 支持上传到远端服务器，配合文件监听，浏览器自动刷新功能，可实现保存即增量编译上传，上传后即刷新的开发体验
-* 超低学习成本，只须记忆 ``3`` 条命令即可完成开发
-* 抹平编码差异，开发中无论是gbk、gb2312、utf8、utf8-bom等编码的文件，输出时都能统一指定为utf8无bom（默认）或者gbk文件
+// Global end
 
-## 快速入门
+// default media is `dev`
+fis.media('dev')
+  .match('*', {
+    useHash: false,
+    optimizer: null
+  });
 
-* [基本使用](https://github.com/fex-team/fis/wiki/快速入门)
-* [资源压缩](https://github.com/fex-team/fis/wiki/快速入门#资源压缩)
-* [资源合并](https://github.com/fex-team/fis/wiki/快速入门#资源合并)
-* [辅助开发](https://github.com/fex-team/fis/wiki/辅助开发)
+// extends GLOBAL config
+fis.media('production');
+```
 
-## 语言能力
 
-* [关于三种语言能力](https://github.com/fis-dev/fis/wiki/三种语言能力)
-* [定位资源](https://github.com/fis-dev/fis/wiki/定位资源)
-* [嵌入资源](https://github.com/fis-dev/fis/wiki/嵌入资源)
-* [声明依赖](https://github.com/fis-dev/fis/wiki/声明依赖)
+## 命令
 
-## 插件系统
+通过以下命令查看 FIS3 提供了哪些命令。
 
-* [编译过程运行原理](https://github.com/fis-dev/fis/wiki/运行原理)
-* [插件调用机制](https://github.com/fis-dev/fis/wiki/插件调用机制)
-* [插件扩展点](https://github.com/fis-dev/fis/wiki/插件扩展点列表)
-* [插件列表](https://github.com/fis-dev/fis/wiki/插件列表)
+```bash
+~ fisy -h
 
-## 配置文档
+[INFO] Currently running fisy (/usr/local/lib/node_modules/fis3/)
 
-* [零配置](https://github.com/fis-dev/fis/wiki/配置API)
-* [使用配置文件](https://github.com/fis-dev/fis/wiki/配置API)
-* 系统配置
-    * [project.charset](https://github.com/fis-dev/fis/wiki/配置API#wiki-projectcharset)
-    * [project.md5Length](https://github.com/fis-dev/fis/wiki/配置API#wiki-projectmd5length)
-    * [project.md5Connector](https://github.com/fis-dev/fis/wiki/配置API#wiki-projectmd5connector)
-    * [project.include](https://github.com/fis-dev/fis/wiki/配置API#wiki-projectinclude)
-    * [project.exclude](https://github.com/fis-dev/fis/wiki/配置API#wiki-projectexclude)
-    * [project.fileType.text](https://github.com/fis-dev/fis/wiki/配置API#wiki-projectfiletypetext)
-    * [project.fileType.image](https://github.com/fis-dev/fis/wiki/配置API#wiki-projectfiletypeimage)
-* 插件配置
-    * [modules.parser](https://github.com/fis-dev/fis/wiki/配置API#wiki-modulesparser)
-    * [modules.preprocessor](https://github.com/fis-dev/fis/wiki/配置API#wiki-modulespreprocessor)
-    * [modules.postprocessor](https://github.com/fis-dev/fis/wiki/配置API#wiki-modulespostprocessor)
-    * [modules.lint](https://github.com/fis-dev/fis/wiki/配置API#wiki-moduleslint)
-    * [modules.test](https://github.com/fis-dev/fis/wiki/配置API#wiki-modulestest)
-    * [modules.optimizer](https://github.com/fis-dev/fis/wiki/配置API#wiki-modulesoptimizer)
-    * [modules.prepackager](https://github.com/fis-dev/fis/wiki/配置API#wiki-modulesprepackager)
-    * [modules.packager](https://github.com/fis-dev/fis/wiki/配置API#wiki-modulespackager)
-    * [modules.spriter](https://github.com/fis-dev/fis/wiki/配置API#wiki-modulesspriter)
-    * [modules.postpackager](https://github.com/fis-dev/fis/wiki/配置API#wiki-modulespostpackager)
-    * [settings](https://github.com/fis-dev/fis/wiki/配置API#wiki-settings)
-* 内置插件运行配置
-    * [settings.postprocessor.jswrapper](https://github.com/fis-dev/fis/wiki/%E9%85%8D%E7%BD%AEAPI#settingspostprocessorjswrapper)
-    * [settings.optimizer.uglify-js](https://github.com/fis-dev/fis/wiki/%E9%85%8D%E7%BD%AEAPI#settingsoptimizeruglify-js)
-    * [settings.optimizer.clean-css](https://github.com/fis-dev/fis/wiki/%E9%85%8D%E7%BD%AEAPI#settingsoptimizerclean-css)
-    * [settings.optimizer.png-compressor](https://github.com/fis-dev/fis/wiki/%E9%85%8D%E7%BD%AEAPI#settingsoptimizerpng-compressor)
-    * [settings.spriter.csssprites](https://github.com/fis-dev/fis/wiki/%E9%85%8D%E7%BD%AEAPI#settingsspritercsssprites)
-* 目录规范与域名配置
-    * [roadmap.path](https://github.com/fis-dev/fis/wiki/配置API#wiki-roadmappath)
-    * [roadmap.ext](https://github.com/fis-dev/fis/wiki/配置API#wiki-roadmapext)
-    * [roadmap.domain](https://github.com/fis-dev/fis/wiki/配置API#wiki-roadmapdomain)
-    * [roadmap.domain.image](https://github.com/fis-dev/fis/wiki/配置API#wiki-roadmapdomainimage)
-* 部署配置
-    * [deploy](https://github.com/fis-dev/fis/wiki/配置API#wiki-deploy)
-* 打包配置
-    * [pack](https://github.com/fis-dev/fis/wiki/配置API#wiki-pack)
+ Usage: fisy <command>
 
-## 高级使用
+ Commands:
 
-* [基于map.json的前后端架构设计指导](https://github.com/fis-dev/fis/wiki/基于map.json的前后端架构设计指导)
+   init                     scaffold with specifed template.
+   install                  install components
+   release [media name]     build and deploy your project
+   server                   launch a php-cgi server
+   inspect [media name]     inspect the result of fis.match
 
-## 更多资料
+ Options:
 
-* [fistool](https://github.com/kaven85/fistool) 可视化界面工具
-* [gois](https://github.com/xiangshouding/gois) go语言组件化解决方案
-* [phiz](https://github.com/fouber/phiz/) PHP组件化解决方案
-* [spmx](https://github.com/fouber/spmx) 通过包装fis得到适应seajs架构的集成解决方案
-* [sublime plugin](https://github.com/yuanfang829/fis-sublime-command) 支持FIS编译的sublime插件，可以替代watch功能
+   -h, --help                print this help message
+   -v, --version             print product version and exit
+   -r, --root <path>         specify project root
+   -f, --file <filename>     specify the file path of `fis-conf.js`
+   --no-color                disable colored output
+   --verbose                 enable verbose mode
+```
+
+通过帮助信息，不难发现 FIS3 默认内置了命令 `release`、`install`、`init`、`server`、`inspect`等命令，这些命令都是 FIS `fis-command-*` 插件提供，通过
+
+```bash
+fisy <command>
+```
+
+来调用，详见以下文档介绍内置的命令。
+
+### release
+
+> `fisy-command-release` 插件提供，默认内置
+
+编译发布一个 FIS3 项目
+
+```bash
+$ fisy release -h
+
+ [INFO] Currently running fisy (/usr/local/lib/node_modules/fis3/)
+
+ Usage: fisy release [media name]
+
+ Options:
+
+   -h, --help            print this help message
+   -d, --dest <path>     release output destination
+   -l, --lint            with lint
+   -w, --watch           monitor the changes of project
+   -L, --live            automatically reload your browser
+   -c, --clean           clean compile cache
+   -u, --unique          use unique compile caching
+```
+
+添加 `-h` 或者 `--help` 参数可以看到如上帮助信息，其中标明此命令有哪些参数并且起到什么作用。
+
+- `-h`、`--help` 打印帮助信息
+- `-d`、`--dest` 编译产出到一个特定的目录
+
+  ```
+  fisy release -d ./output
+  ```
+  发布到当前命令执行目录下的 `./output` 目录下。
+
+  ```
+  fisy release -d ../output
+  ```
+  发布到当前命令执行目录服目录的 `../output` 目录下, 即上一级的 `output` 目录。
+
+- `-l`, `--lint` 启用文件格式检测
+
+  ```
+  fis3 release -l
+  ```
+
+  默认 `fisy release` 不会启用 lint 过程，只有通过命令行参数指定了才会开启。
+
+- `-w`、`--watch` 启动文件监听
+
+  ```
+  fisy release -w
+  ```
+
+  会启动文件监听功能，当文件变化时会编译发布变化了的文件以及依赖它的文件。加了此参数，命令不会马上退出，而是常驻且监听文件变化，并按需再次执行。想停止命令需要使用快捷键 <kbd>CTRL</kbd>+<kbd>c</kbd> 来强制停止。
+
+- `-L`、`--live` 启动 `livereload` 功能
+
+  ```
+  fisy release -L
+  ```
+
+  `livereload` 功能应该跟 `watch` 功能一起使用（`-w` 在开启 `liveload` 的前提下，自动开启），当某文档做了修改时，会自动刷新页面。
+
+- `-c`, `--clean` 清除编译缓存
+
+  ```
+  fisy release -c
+  ```
+
+  默认 fis 的每次编译都会检测编译缓存是否有效，如果有效 fis 是不会重复编译的。开启此选项后，fis 编译前会做一次缓存清理。
+
+- `-u`, `--unique` 启用独立缓存
+
+  为了防止多个项目同时编译时缓存文件混乱，启用此选项后，会使用独立的缓存文件夹。一般用于编译机。
+
+
+### server
+
+> `fis-command-server` 插件提供，默认内置
+
+fis3 内置了一个小型 web server, 可以通过 `fis3 server start` 快速开启。如果一切正常，开启后它将自动弹出浏览器打开 `http://127.0.0.1:8080/`。
+
+需要说明的是，fis3 自带的 server 默认是通过 java 内嵌 jetty 然后桥接 php-cgi 的方式运行的。所以，要求用户机器上必须安装有 jre 和 php-cgi 程序。
+
+另外, fis server 是后台进行运行的，不会随着进程的结束而停止。如果想停止该服务器，请使用 `fis3 server stop` 进行关闭。
+
+更多说明请参考命令行使用说明。
+
+```bash
+$ fisy server --help
+
+ [INFO] Currently running fisy (/usr/local/lib/node_modules/fis3/)
+
+  Usage: server <command> [options]
+
+  Commands:
+
+    start                  start server
+    stop                   shutdown server
+    restart                restart server
+    info                   output server info
+    open                   open document root directory
+    clean                  clean files in document root
+    install <name>         install server framework
+
+  Options:
+
+    -h, --help                     output usage information
+    -p, --port <int>               server listen port
+    --root <path>                  document root
+    --type <php|java|node>         process language
+    --rewrite [script]             enable rewrite mode
+    --repos <url>                  install repository
+    --timeout <seconds>            start timeout
+    --php_exec <path>              path to php-cgi executable file
+    --php_exec_args <args>         php-cgi arguments
+    --php_fcgi_children <int>      the number of php-cgi processes
+    --php_fcgi_max_requests <int>  the max number of requests
+    --registry <registry>          set npm registry
+    --include <glob>               clean include filter
+    --exclude <glob>               clean exclude filter
+    --https                        start https server
+
+```

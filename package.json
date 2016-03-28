@@ -1,26 +1,30 @@
 {
   "name": "fisy",
-  "version": "1.0.2",
-  "description": "fis",
+  "version": "3.1.1",
+  "description": "fis3",
   "main": "fisy.js",
   "bin": {
-    "fisy": "bin/fisy"
+    "fisy": "bin/fisy.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
-    "fis"
+    "fis",
+    "fis3"
   ],
-  "author": "ymyang",
+  "author": {
+    "name": "ymyang"
+  },
   "license": "ISC",
   "dependencies": {
-    "fis": "^1.9.39",
-    "fis-lint-jshint": "0.0.10",
-    "fis-optimizer-ng-annotate": "0.0.2",
-    "fis-optimizer-shutup": "0.0.1",
     "fis-parser-less": "^0.1.3",
-    "fis-postpackager-modjs": "0.0.2",
-    "fis-postprocessor-require-async": "0.0.9"
+    "fis-postprocessor-jswrapper": "0.0.14",
+    "fis-preprocessor-annotate": "0.0.2",
+    "fis3": "^3.3.21",
+    "fis3-hook-module": "^1.2.2",
+    "fis3-postpackager-loader": "^1.3.13",
+    "liftoff": "^2.2.1",
+    "minimist": "^1.2.0"
   }
 }

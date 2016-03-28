@@ -24,7 +24,10 @@ fis.match('*', {
     domain: false,
     release: false,
     useSprite: false,
-    __RESOURCE_MAP: true
+    __RESOURCE_MAP: true,
+    deploy: fis.plugin('local-deliver', {
+        to: '../_/'
+    })
 })
     .match('/app/libs/**.js', {
         isMod: false,

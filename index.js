@@ -10,13 +10,10 @@ fis.cli.info = require('./package.json');
 
 fis.config.set("project.watch.usePolling", true);
 fis.set('prefix', '');
-//fis.hook('relative');
-//fis.hook('cmd');
 fis.hook('module', {
-    mode: 'amd' // 模块化支持 amd 规范，适应 require.js
+    mode: 'mod'
 });
 
-/*************************目录规范*****************************/
 fis.match('*', {
     relative: false,
     useHash: false,
@@ -68,7 +65,7 @@ fis.match('*', {
         release: '${prefix}/$1'
     });
 
-fis.match('::packager', {
+fis.match('::package', {
     // npm install [-g] fis3-postpackager-loader
     // 分析 __RESOURCE_MAP__ 结构，来解决资源加载问题
     postpackager: fis.plugin('loader', {
@@ -86,24 +83,32 @@ fis.media('prod')
     .match('/app/libs/**.js', {
         useHash: true,
         optimizer: fis.plugin('uglify-js'),
-        //packTo: '/js/libs.min.js'
+        packTo: '/pkg/libs.min.js'
     })
     .match('/app/components/**.js', {
         useHash: true,
         optimizer: fis.plugin('uglify-js'),
-        //packTo: '/js/components.min.js'
+        packTo: '/pkg/components.min.js'
     })
     .match('/app/js/**.js', {
         useHash: true,
         preprocessor: fis.plugin('annotate'),
         optimizer: fis.plugin('uglify-js'),
-        //packTo: '/js/main.min.js'
+        packTo: '/pkg/main.min.js'
     })
     .match('/app/css/**.{css,less}', {
         useSprite: true,
         useHash: true,
-        optimizer: fis.plugin('clean-css')
+        optimizer: fis.plugin('clean-css'),
+        packTo: '/pkg/style.css'
     })
-    .match('/app/css/fonts/*.*', {
-        useHash: true
+    .match('/app/css/fonts/(*.*)', {
+        useHash: true,
+        release: '${prefix}/fonts/$1'
+    }).match('/pkg/(*.js)', {
+        useHash: true,
+        release: '${prefix}/js/$1'
+    }).match('/pkg/(*.css)', {
+        useHash: true,
+        release: '${prefix}/css/$1'
     });

@@ -50,12 +50,12 @@ fis.match('*', {
             wrapAll: true
         })
     })
-    .match('/app/css/**.{css,less}', {
-        release: '${prefix}/$&'
-    })
     .match('/app/css/**.less', {
         rExt: '.css',
         parser: fis.plugin('less')
+    })
+    .match('/app/css/**.{css,less}', {
+        release: '${prefix}/$&'
     })
     .match('/app/css/fonts/*.*', {
         release: '${prefix}/$&'
@@ -100,7 +100,7 @@ fis.media('prod')
         useSprite: true,
         useHash: true,
         optimizer: fis.plugin('clean-css'),
-        packTo: '/pkg/style.css'
+        packTo: '/pkg/style.min.css'
     })
     .match('/app/css/fonts/(*.*)', {
         useHash: true,
